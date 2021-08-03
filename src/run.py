@@ -1,5 +1,6 @@
 import json
 import random
+from messages import messages
 
 datos = {
     "piedra": "1",
@@ -9,13 +10,13 @@ datos = {
 
 def login():
     
-    user = input("Tu nickname: ") ## Nicknames no funcionan bien despues del reinicio!!
+    user = input(f"{messages.nick_set}: ") ## Nicknames no funcionan bien despues del reinicio!!
     
     if not user:
         
         try:
             
-            print("No elegistes un nickname")
+            print(f"{messages.no_nickname}")
             
             return login()
             
@@ -25,18 +26,18 @@ def login():
         
     else:
         
-        print("Tu nickname sera: {0}".format(user))
+        print("{} {0}".format(messages.nick_seted, user))
         start(u=user)
 
 class end:
     def lose():
     
-        print("Te gano el bot. Perdistes XD !")
+        print(f"{messages.on_lose}")
     
         return start()
     def win():
         
-        print("Ganastes!!!!")
+        print(f"{messages.on_win}")
         
         return start()
 
@@ -50,21 +51,21 @@ def game(con=None):
     
     if(bot_selection == "1"):
         
-        selected = "Piedra" 
+        selected = messages.stone 
         
     elif(bot_selection == "2"):
         
-        selected = "Papel"
+        selected = messages.paper
         
     elif(bot_selection == "3"):
         
-        selected = "Tijera"
+        selected = messages.scissors
     
     print("Bot: "+selected)
     
     if(con == bot_selection):
         
-        print("Empate!!!")
+        print(f"{messages.on_tie}")
         return start()
 
     else:
@@ -121,37 +122,37 @@ def start(u=None):
     
     print("_________________________________________________")
     
-    print("Piedra (1), Papel (2) o Tijera (3) !")
+    print(f"{messages.stone} (1), {messages.paper} (2) o {messages.scissors} (3) !")
     
     pptp = input("- ")
     
     if not pptp:
         
-        print("No elegistes ninguna opt!!")
+        print(f"{messages.no_option}")
         
     else:
         
         if datos["piedra"] in pptp:
             
-            print("{0}(Yo): Piedra".format(u))
+            print("{0}(Yo/Me): {}".format(u, messages.stone))
             
             game(con=datos["piedra"])
             
         elif datos["papel"] in pptp:
             
-            print("{0}(Yo): Papel".format(u))
+            print("{0}(Yo): {}".format(u, messages.paper))
             
             game(con=datos["papel"])
             
         elif datos["tijera"] in pptp:
             
-            print("{0}(Yo): Tijera".format(u))
+            print("{0}(Yo): {}".format(u, messages.scissors))
             
             game(con=datos["tijera"])
             
         else:
             
-            print("No existe esa opt!!")
+            print(f"{messages.option_null}")
             return start()
     
 login()
