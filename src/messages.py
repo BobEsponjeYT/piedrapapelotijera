@@ -13,3 +13,11 @@ class messages:
   no_option = "No elegistes una opcion!"
   
   no_nickname = "No pusistes un nickname!"
+  
+  ## MATERIALS
+  
+  stone = "Piedra"
+  
+  paper = "Papel"
+  
+  scissors = "Tijera"
