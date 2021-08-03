@@ -26,7 +26,7 @@ def login():
         
     else:
         
-        print("{} {0}".format(messages.nick_seted, user))
+        print("{} {}".format(messages.nick_seted, user))
         start(u=user)
 
 class end:
@@ -134,19 +134,19 @@ def start(u=None):
         
         if datos["piedra"] in pptp:
             
-            print("{0}(Yo/Me): {}".format(u, messages.stone))
+            print("{}(Yo/Me): {}".format(u, messages.stone))
             
             game(con=datos["piedra"])
             
         elif datos["papel"] in pptp:
             
-            print("{0}(Yo): {}".format(u, messages.paper))
+            print("{}(Yo): {}".format(u, messages.paper))
             
             game(con=datos["papel"])
             
         elif datos["tijera"] in pptp:
             
-            print("{0}(Yo): {}".format(u, messages.scissors))
+            print("{}(Yo): {}".format(u, messages.scissors))
             
             game(con=datos["tijera"])
             
