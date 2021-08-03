@@ -26,7 +26,7 @@ class messages:
   
   ## SET
   
-  nick_set = "Tu nickname: "
+  nick_set = "Tu nickname"
   
   nick_seted = "Tu nickname sera"
   
