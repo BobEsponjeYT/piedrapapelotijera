@@ -8,6 +8,8 @@ class messages:
   
   on_win = "Ganastes!"
   
+  option_null = "Esa opcion no existe!"
+  
   ## ON MENU
   
   no_option = "No elegistes una opcion!"
@@ -21,3 +23,11 @@ class messages:
   paper = "Papel"
   
   scissors = "Tijera"
+  
+  ## SET
+  
+  nick_set = "Tu nickname: "
+  
+  nick_seted = "Tu nickname sera"
+  
+  
