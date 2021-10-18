@@ -119,41 +119,42 @@ def game(con=None, nick=None):
     
 
 def start(u=None):
+    while True:
     
-    print("_________________________________________________")
-    
-    print(f"{messages.stone} (1), {messages.paper} (2) o {messages.scissors} (3) !")
-    
-    pptp = input("- ")
-    
-    if not pptp:
-        
-        print(f"{messages.no_option}")
-        
-    else:
-        
-        if datos["piedra"] in pptp:
-            
-            print("{}(Yo/Me): {}".format(u, messages.stone))
-            
-            game(con=datos["piedra"], nick=u)
-            
-        elif datos["papel"] in pptp:
-            
-            print("{}(Yo): {}".format(u, messages.paper))
-            
-            game(con=datos["papel"], nick=u)
-            
-        elif datos["tijera"] in pptp:
-            
-            print("{}(Yo): {}".format(u, messages.scissors))
-            
-            game(con=datos["tijera"], nick=u)
-            
+        print("_________________________________________________")
+
+        print(f"{messages.stone} (1), {messages.paper} (2) o {messages.scissors} (3) !")
+
+        pptp = input("- ")
+
+        if not pptp:
+
+            print(f"{messages.no_option}")
+
         else:
-            
-            print(f"{messages.option_null}")
-            return start(u=u)
+
+            if datos["piedra"] in pptp:
+
+                print("{}(Yo/Me): {}".format(u, messages.stone))
+
+                game(con=datos["piedra"], nick=u)
+
+            elif datos["papel"] in pptp:
+
+                print("{}(Yo): {}".format(u, messages.paper))
+
+                game(con=datos["papel"], nick=u)
+
+            elif datos["tijera"] in pptp:
+
+                print("{}(Yo): {}".format(u, messages.scissors))
+
+                game(con=datos["tijera"], nick=u)
+
+            else:
+
+                print(f"{messages.option_null}")
+                return start(u=u)
     
 login()
 
