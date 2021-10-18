@@ -30,19 +30,19 @@ def login():
         start(u=user)
 
 class end:
-    def lose():
+    def lose(u=None):
     
         print(f"{messages.on_lose}")
     
-        return start()
-    def win():
+        return start(u=u)
+    def win(u=None):
         
         print(f"{messages.on_win}")
         
-        return start()
+        return start(u=u)
 
 
-def game(con=None):
+def game(con=None, nick=None):
     piedra = datos["piedra"]
     papel = datos["papel"]
     tijera = datos["tijera"]
@@ -74,30 +74,30 @@ def game(con=None):
             
             if(bot_selection == "2"):
                 
-                end.lose()
+                end.lose(u=nick)
             elif(bot_selection == "3"):
             
-                end.win()
+                end.win(u=nick)
                 
         if(con == papel):
             
             if(bot_selection == "3"):
                 
-                end.lose()
+                end.lose(u=nick)
             
             elif(bot_selection == "1"):
                 
-                end.win()
+                end.win(u=nick)
                 
         if(con == "3"):
             
             if(bot_selection == "1"):
                 
-                end.lose()
+                end.lose(u=nick)
             
             elif(bot_selection == "2"):
                 
-                end.win()
+                end.win(u=nick)
     
         ##ordenes = {
         ##    "piedra": {
@@ -114,7 +114,7 @@ def game(con=None):
         ##    }
         ##}
         
-        return start()
+        return start(u=nick)
     
     
 
@@ -136,30 +136,29 @@ def start(u=None):
             
             print("{}(Yo/Me): {}".format(u, messages.stone))
             
-            game(con=datos["piedra"])
+            game(con=datos["piedra"], nick=u)
             
         elif datos["papel"] in pptp:
             
             print("{}(Yo): {}".format(u, messages.paper))
             
-            game(con=datos["papel"])
+            game(con=datos["papel"], nick=u)
             
         elif datos["tijera"] in pptp:
             
             print("{}(Yo): {}".format(u, messages.scissors))
             
-            game(con=datos["tijera"])
+            game(con=datos["tijera"], nick=u)
             
         else:
             
             print(f"{messages.option_null}")
-            return start()
+            return start(u=u)
     
 login()
 
 if __name__ == "main":
     
-    index = 0 
-    points = 0
+    wins = 0
     
     options = False
