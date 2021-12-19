@@ -74,7 +74,7 @@ def game(con=None, nick=None):
     if(con == bot_selection):
         
         print(f"\u001b[36m{messages.on_tie}")
-        return start()
+        return start(u=nick)
 
     else:
         
