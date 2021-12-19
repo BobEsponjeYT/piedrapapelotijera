@@ -11,4 +11,4 @@ Profiles & wins soon...
 """
 ```
 
-![image](https://imgur.com/a/XSsYqSw)
+![image](https://i.imgur.com/JFu7u4c.png)
