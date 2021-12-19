@@ -18,7 +18,7 @@ def login():
         _ = system('clear')
 
     
-    user = input(f"{messages.nick_set}: ") ## Nicknames no funcionan bien despues del reinicio!!
+    user = input(f"{messages.nick_set}: ") 
     
     if not user:
         
